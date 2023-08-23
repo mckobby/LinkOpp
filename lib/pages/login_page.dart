@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:link_opp/components/button_comp.dart';
+import 'package:link_opp/components/square_tile.dart';
 import 'package:link_opp/components/textfield_comp.dart';
 import 'package:link_opp/constants/colors.dart';
 
@@ -9,18 +10,21 @@ class LoginPage extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
+  void signUserIn() {}
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: tdBackground,
-      body: SafeArea(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(top: height * 0.12),
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(top: height * 0.1, bottom: height * 0.05),
-              alignment: Alignment.center,
+              margin: EdgeInsets.only(bottom: height * 0.05),
               height: height * 0.1,
               child: const Image(
                 image: AssetImage(
@@ -56,7 +60,7 @@ class LoginPage extends StatelessWidget {
               height: height * 0.01,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+              padding: EdgeInsets.only(right: width * 0.05),
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -72,7 +76,79 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: height * 0.04,
             ),
-            const ButtonComp()
+            ButtonComp(
+              onTap: signUserIn,
+            ),
+            SizedBox(
+              height: height * 0.05,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: Divider(
+                      thickness: 0.5,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.02),
+                    child: const Text(
+                      'Or continue with',
+                      style: TextStyle(
+                        color: tdActionTexts,
+                      ),
+                    ),
+                  ),
+                  const Expanded(
+                    child: Divider(
+                      thickness: 0.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: height * 0.04,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SquareTile(
+                  imagePath: 'lib/images/google.png',
+                ),
+                SizedBox(
+                  width: width * 0.03,
+                ),
+                const SquareTile(
+                  imagePath: 'lib/images/apple.png',
+                ),
+              ],
+            ),
+            SizedBox(
+              height: height * 0.04,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Not a member?',
+                  style: TextStyle(
+                    color: tdActionTexts,
+                  ),
+                ),
+                SizedBox(
+                  width: width * 0.01,
+                ),
+                const Text(
+                  'Register now',
+                  style: TextStyle(
+                    color: tdElevatedButton,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
