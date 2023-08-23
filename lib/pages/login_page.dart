@@ -92,7 +92,12 @@ class LoginPage extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: width * 0.02),
-                    child: const Text('Or continue with'),
+                    child: const Text(
+                      'Or continue with',
+                      style: TextStyle(
+                        color: tdActionTexts
+                      ),
+                    ),
                   ),
                   const Expanded(
                     child: Divider(),
