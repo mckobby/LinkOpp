@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:link_opp/components/button_comp.dart';
+import 'package:link_opp/components/square_tile.dart';
 import 'package:link_opp/components/textfield_comp.dart';
 import 'package:link_opp/constants/colors.dart';
 
@@ -15,13 +16,15 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: tdBackground,
-      body: SafeArea(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(top: height * 0.13),
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(top: height * 0.1, bottom: height * 0.05),
+              margin: EdgeInsets.only(bottom: height * 0.05),
               alignment: Alignment.center,
               height: height * 0.1,
               child: const Image(
@@ -96,6 +99,43 @@ class LoginPage extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+            SizedBox(
+              height: height * 0.04,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SquareTile(imagePath: 'lib/images/google.png'),
+                SizedBox(
+                  width: width * 0.02,
+                ),
+                const SquareTile(imagePath: 'lib/images/apple.png')
+              ],
+            ),
+            SizedBox(
+              height: height * 0.04,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Not a member?',
+                  style: TextStyle(
+                    color: tdActionTexts,
+                  ),
+                ),
+                SizedBox(
+                  width: width * 0.01,
+                ),
+                const Text(
+                  'Register now',
+                  style: TextStyle(
+                    color: tdElevatedButton,
+                    fontWeight: FontWeight.w800,
+                  ),
+                )
+              ],
             ),
           ],
         ),
