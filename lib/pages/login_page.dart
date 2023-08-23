@@ -9,6 +9,8 @@ class LoginPage extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
+  void signUserIn() {}
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -56,7 +58,7 @@ class LoginPage extends StatelessWidget {
               height: height * 0.01,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+              padding: EdgeInsets.only(right: width * 0.05),
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -72,7 +74,29 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: height * 0.04,
             ),
-            const ButtonComp()
+            ButtonComp(
+              onTap: signUserIn,
+            ),
+            SizedBox(
+              height: height * 0.04,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: Divider(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.02),
+                    child: const Text('Or continue with'),
+                  ),
+                  const Expanded(
+                    child: Divider(),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
