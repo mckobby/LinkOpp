@@ -4,6 +4,7 @@ import 'package:link_opp/components/square_tile.dart';
 import 'package:link_opp/components/textfield_comp.dart';
 import 'package:link_opp/constants/colors.dart';
 import 'package:link_opp/pages/register_page.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -138,8 +139,9 @@ class LoginPage extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) => RegisterPage(),
+                      PageTransition(
+                        child: RegisterPage(),
+                        type: PageTransitionType.leftToRightWithFade,
                       ),
                     );
                   },
