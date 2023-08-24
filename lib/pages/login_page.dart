@@ -6,11 +6,18 @@ import 'package:link_opp/constants/colors.dart';
 import 'package:link_opp/pages/register_page.dart';
 import 'package:page_transition/page_transition.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+
+  bool passwordObscured = true;
 
   void signUserIn() {}
 
@@ -47,17 +54,33 @@ class LoginPage extends StatelessWidget {
               height: height * 0.03,
             ),
             TextFieldComp(
+              keyboardType: TextInputType.emailAddress,
               controller: usernameController,
-              labelText: 'Username',
+              labelText: 'Email',
               obscureText: false,
+              suffixIcon: const Icon(
+                Icons.email_outlined,
+                color: tdTextField,
+              ),
             ),
             SizedBox(
               height: height * 0.02,
             ),
             TextFieldComp(
+              keyboardType: TextInputType.visiblePassword,
               controller: passwordController,
               labelText: 'Password',
-              obscureText: true,
+              obscureText: passwordObscured,
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    passwordObscured = !passwordObscured;
+                  });
+                },
+                child: Icon(
+                  passwordObscured ? Icons.visibility : Icons.visibility_off,
+                ),
+              ),
             ),
             SizedBox(
               height: height * 0.01,
@@ -140,7 +163,7 @@ class LoginPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       PageTransition(
-                        child: RegisterPage(),
+                        child: const RegisterPage(),
                         type: PageTransitionType.leftToRightWithFade,
                       ),
                     );

@@ -4,11 +4,19 @@ import 'package:link_opp/components/square_tile.dart';
 import 'package:link_opp/components/textfield_comp.dart';
 import 'package:link_opp/constants/colors.dart';
 
-class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  final passwordController1 = TextEditingController();
+
+  bool passwordObscured = true;
 
   void signUserUp() {}
 
@@ -45,25 +53,46 @@ class RegisterPage extends StatelessWidget {
               height: height * 0.03,
             ),
             TextFieldComp(
+              keyboardType: TextInputType.emailAddress,
               controller: usernameController,
               labelText: 'Email',
               obscureText: false,
+              suffixIcon: const Icon(
+                Icons.email_outlined,
+                color: tdTextField,
+              ),
             ),
             SizedBox(
               height: height * 0.02,
             ),
             TextFieldComp(
+              keyboardType: TextInputType.visiblePassword,
               controller: passwordController,
               labelText: 'Password',
-              obscureText: true,
+              obscureText: passwordObscured,
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    passwordObscured = !passwordObscured;
+                  });
+                },
+                child: Icon(
+                  passwordObscured ? Icons.visibility : Icons.visibility_off,
+                ),
+              ),
             ),
             SizedBox(
               height: height * 0.02,
             ),
             TextFieldComp(
-              controller: passwordController,
+              keyboardType: TextInputType.visiblePassword,
+              controller: passwordController1,
               labelText: 'Confirm Password',
-              obscureText: true,
+              obscureText: passwordObscured,
+              suffixIcon: Icon(
+                passwordObscured ? Icons.visibility : Icons.visibility_off,
+                color: tdTextField,
+              ),
             ),
             SizedBox(
               height: height * 0.01,
