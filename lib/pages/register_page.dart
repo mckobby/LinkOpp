@@ -3,15 +3,14 @@ import 'package:link_opp/components/button_comp.dart';
 import 'package:link_opp/components/square_tile.dart';
 import 'package:link_opp/components/textfield_comp.dart';
 import 'package:link_opp/constants/colors.dart';
-import 'package:link_opp/pages/register_page.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  RegisterPage({super.key});
 
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() {}
+  void signUserUp() {}
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: tdBackground,
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: height * 0.15),
+        padding: EdgeInsets.only(top: height * 0.12),
         child: Column(
           children: [
             Container(
@@ -35,7 +34,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             const Text(
-              'Welcome back!',
+              'Create Account',
               style: TextStyle(
                 color: tdActionTexts,
                 fontWeight: FontWeight.w500,
@@ -47,7 +46,7 @@ class LoginPage extends StatelessWidget {
             ),
             TextFieldComp(
               controller: usernameController,
-              labelText: 'Username',
+              labelText: 'Email',
               obscureText: false,
             ),
             SizedBox(
@@ -59,28 +58,22 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(
-              height: height * 0.01,
+              height: height * 0.02,
             ),
-            Padding(
-              padding: EdgeInsets.only(right: width * 0.05),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      color: tdActionTexts,
-                    ),
-                  ),
-                ],
-              ),
+            TextFieldComp(
+              controller: passwordController,
+              labelText: 'Confirm Password',
+              obscureText: true,
+            ),
+            SizedBox(
+              height: height * 0.01,
             ),
             SizedBox(
               height: height * 0.04,
             ),
             ButtonComp(
-              text: 'Sign In',
-              onTap: signUserIn,
+              text: 'Register',
+              onTap: signUserUp,
             ),
             SizedBox(
               height: height * 0.04,
@@ -96,9 +89,7 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: width * 0.02),
                     child: const Text(
                       'Or continue with',
-                      style: TextStyle(
-                        color: tdActionTexts,
-                      ),
+                      style: TextStyle(color: tdActionTexts),
                     ),
                   ),
                   const Expanded(
@@ -127,7 +118,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Not a member?',
+                  'Already a member?',
                   style: TextStyle(
                     color: tdActionTexts,
                   ),
@@ -137,14 +128,10 @@ class LoginPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) => RegisterPage(),
-                      ),
-                    );
+                    Navigator.of(context).pop();
                   },
                   child: const Text(
-                    'Register now',
+                    'Login',
                     style: TextStyle(
                       color: tdElevatedButton,
                       fontWeight: FontWeight.w800,
