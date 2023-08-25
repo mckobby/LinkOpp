@@ -21,31 +21,32 @@ class TextFieldComp extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: width * 0.05),
       child: TextField(
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(
-              vertical: height * 0.02,
-              horizontal: width * 0.03,
-            ),
-            enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: tdElevatedButton),
-            ),
-            focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: tdActionTexts),
-            ),
-            suffixIcon: suffixIcon,
-            suffixIconColor: tdActionTexts.withOpacity(0.5),
-            fillColor: tdTextField,
-            filled: true,
-            labelText: labelText,
-            labelStyle: TextStyle(
-              color: tdActionTexts.withOpacity(0.5),
-            )),
+          contentPadding: EdgeInsets.symmetric(
+            vertical: height * 0.02,
+            horizontal: width * 0.03,
+          ),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: tdElevatedButton),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: tdActionTexts),
+          ),
+          suffixIcon: suffixIcon,
+          suffixIconColor: tdActionTexts.withOpacity(0.5),
+          fillColor: tdTextField,
+          filled: true,
+          labelText: labelText,
+          labelStyle: TextStyle(
+            color: tdActionTexts.withOpacity(0.5),
+          ),
+        ),
       ),
     );
   }
