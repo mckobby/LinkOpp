@@ -110,6 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                 ButtonComp(
                   text: 'Sign In',
                   onTap: signUserIn,
+                  padding: EdgeInsets.symmetric(vertical: height * 0.02),
                 ),
                 SizedBox(
                   height: height * 0.04,
@@ -142,11 +143,17 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SquareTile(imagePath: 'lib/images/google.png'),
+                    SquareTile(
+                      imagePath: 'lib/images/google.png',
+                      heightt: height * 0.06,
+                    ),
                     SizedBox(
                       width: width * 0.02,
                     ),
-                    const SquareTile(imagePath: 'lib/images/apple.png')
+                    SquareTile(
+                      imagePath: 'lib/images/apple.png',
+                      heightt: height * 0.06,
+                    )
                   ],
                 ),
                 SizedBox(
@@ -189,8 +196,8 @@ class _LoginPageState extends State<LoginPage> {
         } else {
           return SingleChildScrollView(
             padding: EdgeInsets.only(
-              top: height * 0.1,
-              bottom: height * 0.05,
+              top: height * 0.12,
+              bottom: height * 0.04,
             ),
             child: Column(
               children: [
@@ -269,6 +276,7 @@ class _LoginPageState extends State<LoginPage> {
                 ButtonComp(
                   text: 'Sign In',
                   onTap: signUserIn,
+                  padding: EdgeInsets.symmetric(vertical: height * 0.04),
                 ),
                 SizedBox(
                   height: height * 0.04,
@@ -301,11 +309,17 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SquareTile(imagePath: 'lib/images/google.png'),
-                    SizedBox(
-                      width: width * 0.02,
+                    SquareTile(
+                      imagePath: 'lib/images/google.png',
+                      heightt: height * 0.12,
                     ),
-                    const SquareTile(imagePath: 'lib/images/apple.png')
+                    SizedBox(
+                      width: width * 0.01,
+                    ),
+                    SquareTile(
+                      imagePath: 'lib/images/apple.png',
+                      heightt: height * 0.12,
+                    )
                   ],
                 ),
                 SizedBox(

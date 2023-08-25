@@ -110,6 +110,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ButtonComp(
                     text: 'Register',
                     onTap: signUserUp,
+                    padding: EdgeInsets.symmetric(vertical: height * 0.02),
                   ),
                   SizedBox(
                     height: height * 0.04,
@@ -141,13 +142,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SquareTile(
+                      SquareTile(
                         imagePath: 'lib/images/google.png',
+                        heightt: height * 0.06,
                       ),
                       SizedBox(
                         width: width * 0.02,
                       ),
-                      const SquareTile(imagePath: 'lib/images/apple.png')
+                      SquareTile(
+                        imagePath: 'lib/images/apple.png',
+                        heightt: height * 0.06,
+                      )
                     ],
                   ),
                   SizedBox(
@@ -185,8 +190,8 @@ class _RegisterPageState extends State<RegisterPage> {
           } else {
             return SingleChildScrollView(
               padding: EdgeInsets.only(
-                top: height * 0.1,
-                bottom: height * 0.05,
+                top: height * 0.12,
+                bottom: height * 0.04,
               ),
               child: Column(
                 children: [
@@ -263,6 +268,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ButtonComp(
                     text: 'Register',
                     onTap: signUserUp,
+                    padding: EdgeInsets.symmetric(vertical: height * 0.04),
                   ),
                   SizedBox(
                     height: height * 0.04,
@@ -294,13 +300,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SquareTile(
+                      SquareTile(
                         imagePath: 'lib/images/google.png',
+                        heightt: height * 0.12,
                       ),
                       SizedBox(
-                        width: width * 0.02,
+                        width: width * 0.01,
                       ),
-                      const SquareTile(imagePath: 'lib/images/apple.png')
+                      SquareTile(
+                        imagePath: 'lib/images/apple.png',
+                        heightt: height * 0.12,
+                      )
                     ],
                   ),
                   SizedBox(

@@ -3,7 +3,8 @@ import 'package:link_opp/constants/colors.dart';
 
 class SquareTile extends StatelessWidget {
   final String imagePath;
-  const SquareTile({super.key, required this.imagePath});
+  final double heightt;
+  const SquareTile({super.key, required this.imagePath, required this.heightt});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class SquareTile extends StatelessWidget {
         image: AssetImage(
           imagePath,
         ),
-        height: height * 0.06,
+        height: heightt,
       ),
     );
   }
