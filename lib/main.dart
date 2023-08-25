@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:link_opp/auth/login_or_register.dart';
-import 'package:link_opp/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
