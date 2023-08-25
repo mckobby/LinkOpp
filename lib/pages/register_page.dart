@@ -5,7 +5,8 @@ import 'package:link_opp/components/textfield_comp.dart';
 import 'package:link_opp/constants/colors.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  final Function()? onTap;
+  const RegisterPage({super.key, required this.onTap});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -171,9 +172,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         width: width * 0.01,
                       ),
                       InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
+                        onTap: widget.onTap,
                         child: const Text(
                           'Login',
                           style: TextStyle(
@@ -329,9 +328,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         width: width * 0.01,
                       ),
                       InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
+                        onTap: widget.onTap,
                         child: const Text(
                           'Login',
                           style: TextStyle(

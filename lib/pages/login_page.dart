@@ -3,11 +3,10 @@ import 'package:link_opp/components/button_comp.dart';
 import 'package:link_opp/components/square_tile.dart';
 import 'package:link_opp/components/textfield_comp.dart';
 import 'package:link_opp/constants/colors.dart';
-import 'package:link_opp/pages/register_page.dart';
-import 'package:page_transition/page_transition.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final Function()? onTap;
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -172,14 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: width * 0.01,
                     ),
                     InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          PageTransition(
-                            child: const RegisterPage(),
-                            type: PageTransitionType.leftToRightWithFade,
-                          ),
-                        );
-                      },
+                      onTap: widget.onTap,
                       child: const Text(
                         'Register now',
                         style: TextStyle(
@@ -338,14 +330,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: width * 0.01,
                     ),
                     InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          PageTransition(
-                            child: const RegisterPage(),
-                            type: PageTransitionType.leftToRightWithFade,
-                          ),
-                        );
-                      },
+                      onTap: widget.onTap,
                       child: const Text(
                         'Register now',
                         style: TextStyle(
