@@ -24,7 +24,9 @@ class ButtonComp extends StatelessWidget {
         padding: padding,
         margin: EdgeInsets.symmetric(horizontal: width * 0.05),
         decoration: BoxDecoration(
-            color: tdElevatedButton, borderRadius: BorderRadius.circular(10)),
+          color: tdElevatedButton,
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Center(
           child: Text(
             text,
