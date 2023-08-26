@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "841372857451",
+    "firebase_url": "https://link-opp-default-rtdb.firebaseio.com",
+    "project_id": "link-opp",
+    "storage_bucket": "link-opp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841372857451:android:ca74159fb475f8f6c0ed2e",
+        "android_client_info": {
+          "package_name": "com.zenva.link_opp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841372857451-lhop1kopsvlrbkb003as2mc5nc3pteud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_bvuVj7o3Iu2vcU6XmE0L60GfqURucco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841372857451-lhop1kopsvlrbkb003as2mc5nc3pteud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
