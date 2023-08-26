@@ -21,9 +21,42 @@ class _RegisterPageState extends State<RegisterPage> {
   bool passwordObscured = true;
 
   void signUserUp() async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text,
+    showDialog(
+      context: context,
+      builder: (context) => const Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+
+    if (passwordController.text != passwordController1.text) {
+      Navigator.pop(context);
+      displayMessage('Passwords don\'t match');
+      return;
+    }
+
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      if (context.mounted) Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      displayMessage(e.code);
+    }
+  }
+
+  void displayMessage(String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(
+          message,
+          style: const TextStyle(
+            fontSize: 17,
+          ),
+        ),
+      ),
     );
   }
 

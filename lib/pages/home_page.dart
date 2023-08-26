@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:link_opp/constants/colors.dart';
 
@@ -9,6 +10,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void signOut() {
+    FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +34,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             GestureDetector(
-              // onTap: signOut,
+              onTap: signOut,
               child: const Icon(
                 Icons.logout,
                 color: Colors.white,
