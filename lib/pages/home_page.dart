@@ -56,12 +56,11 @@ class _HomePageState extends State<HomePage> {
         children: [
           Column(
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: width * 0.045,
-                ),
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: height * 0.01),
+              Container(
+                color: tdDrawer,
+                padding: EdgeInsets.symmetric(vertical: height * 0.015),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.045),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -104,14 +103,15 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Icon(
                             Icons.image_sharp,
-                            color: tdActionTexts,
+                            color: Colors.white,
                             size: height * 0.045,
                           ),
                           const Text(
                             'Photo',
                             style: TextStyle(
-                              color: tdActionTexts,
+                              color: Colors.white,
                               fontSize: 13,
+                              fontWeight: FontWeight.w500,
                             ),
                           )
                         ],
@@ -120,45 +120,78 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 3,
+              ),
               Container(
                 padding: EdgeInsets.only(left: width * 0.045),
-                color: Colors.white,
-                height: height * 0.2,
+                color: tdDrawer,
+                height: height * 0.22,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
                     const StoryField(
-                      imagePath: 'lib/images/apple.png',
-                      numberOfPics: '1',
-                      firstName: 'Michael',
-                      lastName: 'Kissi',
+                      imagePath: 'lib/images/miccc.jpg',
+                      numberOfPics: '2',
+                      firstName: 'Motivated',
+                      lastName: 'Mindset',
                     ),
                     SizedBox(
-                      width: width * 0.01,
+                      width: width * 0.02,
                     ),
                     const StoryField(
-                      imagePath: 'lib/images/apple.png',
+                      imagePath: 'lib/images/miccc.jpg',
                       numberOfPics: '1',
-                      firstName: 'Michael',
-                      lastName: 'Kissi',
+                      firstName: 'Kehinde',
+                      lastName: 'David',
                     ),
                     SizedBox(
-                      width: width * 0.01,
+                      width: width * 0.02,
                     ),
                     const StoryField(
-                      imagePath: 'lib/images/apple.png',
+                      imagePath: 'lib/images/miccc.jpg',
                       numberOfPics: '1',
-                      firstName: 'Michael',
-                      lastName: 'Kissi',
+                      firstName: 'Kwame',
+                      lastName: 'Dave',
                     ),
                     SizedBox(
-                      width: width * 0.01,
+                      width: width * 0.02,
                     ),
                     const StoryField(
-                      imagePath: 'lib/images/apple.png',
+                      imagePath: 'lib/images/miccc.jpg',
                       numberOfPics: '1',
-                      firstName: 'Michael',
-                      lastName: 'Kissi',
+                      firstName: 'Ahmed',
+                      lastName: 'Donkoh',
+                    ),
+                    SizedBox(
+                      width: width * 0.02,
+                    ),
+                    const StoryField(
+                      imagePath: 'lib/images/miccc.jpg',
+                      numberOfPics: '2',
+                      firstName: 'Mercy',
+                      lastName: 'Kipsos',
+                    ),
+                    SizedBox(
+                      width: width * 0.02,
+                    ),
+                    const StoryField(
+                      imagePath: 'lib/images/miccc.jpg',
+                      numberOfPics: '1',
+                      firstName: 'Yaa',
+                      lastName: 'Fremah',
+                    ),
+                    SizedBox(
+                      width: width * 0.02,
+                    ),
+                    const StoryField(
+                      imagePath: 'lib/images/miccc.jpg',
+                      numberOfPics: '7',
+                      firstName: 'Sweetness',
+                      lastName: 'Emefa',
+                    ),
+                    SizedBox(
+                      width: width * 0.02,
                     ),
                   ],
                 ),

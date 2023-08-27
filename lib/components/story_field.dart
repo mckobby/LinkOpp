@@ -17,70 +17,88 @@ class StoryField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final height = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.pink,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      width: width * 0.3,
-      child: Stack(
-        children: [
-          Center(
-            child: Image(
-              image: AssetImage(
-                imagePath,
-              ),
-            ),
-          ),
-          Positioned(
-            left: 10,
-            top: 10,
-            child: Container(
-              height: 30,
-              width: 25,
-              decoration: BoxDecoration(
-                color: tdElevatedButton,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Center(
-                child: Text(
-                  numberOfPics,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                  ),
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: height * 0.01),
+      child: SizedBox(
+        width: width * 0.3,
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image(
+                image: AssetImage(
+                  imagePath,
                 ),
               ),
             ),
-          ),
-          Positioned(
-            left: 10,
-            bottom: 10,
-            child: Column(
-              children: [
-                Text(
-                  firstName,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+            Stack(
+            children: [
+              Positioned(
+                left: 10,
+                top: 10,
+                child: Container(
+                  height: 30,
+                  width: 25,
+                  decoration: BoxDecoration(
+                    color: tdElevatedButton,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                    child: Text(
+                      numberOfPics,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
                 ),
-                Text(
-                  lastName,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
-                )
-              ],
-            ),
-          )
-        ],
+              ),
+              Positioned(
+                left: 10,
+                bottom: 10,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      firstName,
+                      style: const TextStyle(
+                          color: tdActionTexts,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          shadows: [
+                            Shadow(
+                              color: Colors.white,
+                              offset: Offset(0.9, 0.5),
+                              blurRadius: 0.5,
+                            )
+                          ]),
+                    ),
+                    Text(
+                      lastName,
+                      style: const TextStyle(
+                        color: tdActionTexts,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                        shadows: [
+                          Shadow(
+                            color: Colors.white,
+                            offset: Offset(0.9, 0.5),
+                            blurRadius: 0.5,
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+          ],
+        ),
       ),
     );
   }
