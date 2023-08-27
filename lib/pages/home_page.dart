@@ -16,6 +16,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // final height = MediaQuery.of(context).size.height;
+    // final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: tdBackground,
       appBar: AppBar(
@@ -28,7 +30,7 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
             ),
             const Text(
-              'Link Opp',
+              'LinkOpp',
               style: TextStyle(
                 color: Colors.white,
               ),
