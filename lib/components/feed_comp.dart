@@ -126,8 +126,11 @@ class FeedComp extends StatelessWidget {
           SizedBox(
             height: height * 0.005,
           ),
-          Image(
-            image: AssetImage(mainImage),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image(
+              image: AssetImage(mainImage),
+            ),
           ),
           SizedBox(
             height: height * 0.01,
