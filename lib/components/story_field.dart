@@ -19,6 +19,7 @@ class StoryField extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
     return Padding(
       padding: EdgeInsets.symmetric(vertical: height * 0.01),
       child: SizedBox(
@@ -31,42 +32,45 @@ class StoryField extends StatelessWidget {
                 image: AssetImage(
                   imagePath,
                 ),
+                width: width,
+                height: height,
+                fit: BoxFit.cover,
               ),
             ),
             Stack(
-            children: [
-              Positioned(
-                left: 10,
-                top: 10,
-                child: Container(
-                  height: 30,
-                  width: 25,
-                  decoration: BoxDecoration(
-                    color: tdElevatedButton,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Center(
-                    child: Text(
-                      numberOfPics,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
+              children: [
+                Positioned(
+                  left: 10,
+                  top: 10,
+                  child: Container(
+                    height: 30,
+                    width: 25,
+                    decoration: BoxDecoration(
+                      color: tdElevatedButton,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Center(
+                      child: Text(
+                        numberOfPics,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                left: 10,
-                bottom: 10,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      firstName,
-                      style: const TextStyle(
-                          color: tdActionTexts,
+                Positioned(
+                  left: 10,
+                  bottom: 10,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        firstName,
+                        style: const TextStyle(
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                           shadows: [
@@ -75,28 +79,29 @@ class StoryField extends StatelessWidget {
                               offset: Offset(0.9, 0.5),
                               blurRadius: 0.5,
                             )
-                          ]),
-                    ),
-                    Text(
-                      lastName,
-                      style: const TextStyle(
-                        color: tdActionTexts,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        shadows: [
-                          Shadow(
-                            color: Colors.white,
-                            offset: Offset(0.9, 0.5),
-                            blurRadius: 0.5,
-                          )
-                        ],
+                          ],
+                        ),
                       ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                      Text(
+                        lastName,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          shadows: [
+                            Shadow(
+                              color: Colors.white,
+                              offset: Offset(0.9, 0.5),
+                              blurRadius: 0.5,
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),

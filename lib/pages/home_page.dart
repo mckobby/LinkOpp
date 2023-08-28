@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:link_opp/components/feed_comp.dart';
 import 'package:link_opp/components/story_field.dart';
 import 'package:link_opp/constants/colors.dart';
 
@@ -65,10 +66,8 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CircleAvatar(
-                        backgroundImage:
-                            const AssetImage('lib/images/apple.png'),
+                        backgroundImage: const AssetImage('lib/images/kmj.jpg'),
                         radius: height * 0.032,
-                        backgroundColor: Colors.white,
                       ),
                       Expanded(
                         child: Padding(
@@ -131,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   children: [
                     const StoryField(
-                      imagePath: 'lib/images/miccc.jpg',
+                      imagePath: 'lib/images/kmj.jpg',
                       numberOfPics: '2',
                       firstName: 'Motivated',
                       lastName: 'Mindset',
@@ -149,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                       width: width * 0.02,
                     ),
                     const StoryField(
-                      imagePath: 'lib/images/miccc.jpg',
+                      imagePath: 'lib/images/aplus.jpg',
                       numberOfPics: '1',
                       firstName: 'Kwame',
                       lastName: 'Dave',
@@ -158,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                       width: width * 0.02,
                     ),
                     const StoryField(
-                      imagePath: 'lib/images/miccc.jpg',
+                      imagePath: 'lib/images/awo.jpg',
                       numberOfPics: '1',
                       firstName: 'Ahmed',
                       lastName: 'Donkoh',
@@ -167,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                       width: width * 0.02,
                     ),
                     const StoryField(
-                      imagePath: 'lib/images/miccc.jpg',
+                      imagePath: 'lib/images/meezy.jpg',
                       numberOfPics: '2',
                       firstName: 'Mercy',
                       lastName: 'Kipsos',
@@ -176,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                       width: width * 0.02,
                     ),
                     const StoryField(
-                      imagePath: 'lib/images/miccc.jpg',
+                      imagePath: 'lib/images/spa.jpg',
                       numberOfPics: '1',
                       firstName: 'Yaa',
                       lastName: 'Fremah',
@@ -185,7 +184,7 @@ class _HomePageState extends State<HomePage> {
                       width: width * 0.02,
                     ),
                     const StoryField(
-                      imagePath: 'lib/images/miccc.jpg',
+                      imagePath: 'lib/images/com.jpg',
                       numberOfPics: '7',
                       firstName: 'Sweetness',
                       lastName: 'Emefa',
@@ -195,6 +194,63 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 3,
+              ),
+              const FeedComp(
+                profileImage: 'lib/images/food.jpg',
+                profileName: 'April M Adler',
+                content:
+                    'I am looking for a perfect web designer and developer, Inbox me on messenger',
+                time: '48m',
+                mainImage: 'lib/images/man.jpg',
+                comments: '1',
+                shares: '0',
+                favorites: '0',
+                analytics: '9',
+              ),
+              const SizedBox(
+                height: 3,
+              ),
+              const FeedComp(
+                profileImage: 'lib/images/ako.jpg',
+                profileName: 'Ghana Yesu',
+                content: 'Kasoa and wonders',
+                time: '48m',
+                mainImage: 'lib/images/ame.jpg',
+                comments: '47',
+                shares: '3',
+                favorites: '338',
+                analytics: '12.8K',
+              ),
+              const SizedBox(
+                height: 3,
+              ),
+              const FeedComp(
+                profileImage: 'lib/images/godd.jpg',
+                profileName: 'Efo Kofi',
+                content: 'Guess the location',
+                time: '3d',
+                mainImage: 'lib/images/wen.jpg',
+                comments: '91',
+                shares: '0',
+                favorites: '188',
+                analytics: '1.1M',
+              ),
+              const SizedBox(
+                height: 3,
+              ),
+              const FeedComp(
+                profileImage: 'lib/images/roz.jpg',
+                profileName: 'Buju Mahogany',
+                content: 'Art is life',
+                time: '7h',
+                mainImage: 'lib/images/val.jpg',
+                comments: '1',
+                shares: '0',
+                favorites: '6,756',
+                analytics: '478.2K',
               )
             ],
           ),
