@@ -34,15 +34,16 @@ class FeedComp extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
     return Container(
       padding: EdgeInsets.symmetric(vertical: height * 0.01),
       color: tdDrawer,
       width: width,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: width * 0.045),
-        child: Column(
-          children: [
-            Row(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -57,12 +58,12 @@ class FeedComp extends StatelessWidget {
                       width: width * 0.03,
                     ),
                     SizedBox(
-                      width: width * 0.62,
+                      width: width * 0.55,
                       child: Text(
                         profileName,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 17,
+                          fontSize: 20,
                           color: Colors.white,
                         ),
                       ),
@@ -74,6 +75,7 @@ class FeedComp extends StatelessWidget {
                     const Icon(
                       Icons.more_horiz_outlined,
                       color: Colors.white,
+                      size: 25,
                     ),
                     SizedBox(
                       width: width * 0.01,
@@ -81,15 +83,19 @@ class FeedComp extends StatelessWidget {
                     Icon(
                       Icons.close,
                       color: Colors.grey[300],
+                      size: 25,
                     )
                   ],
                 )
               ],
             ),
-            SizedBox(
-              height: height * 0.01,
-            ),
-            Row(
+          ),
+          SizedBox(
+            height: height * 0.01,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -99,7 +105,7 @@ class FeedComp extends StatelessWidget {
                     content,
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 17,
+                      fontSize: 19,
                     ),
                   ),
                 ),
@@ -116,16 +122,19 @@ class FeedComp extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
-              height: height * 0.005,
-            ),
-            Image(
-              image: AssetImage(mainImage),
-            ),
-            SizedBox(
-              height: height * 0.005,
-            ),
-            Row(
+          ),
+          SizedBox(
+            height: height * 0.005,
+          ),
+          Image(
+            image: AssetImage(mainImage),
+          ),
+          SizedBox(
+            height: height * 0.01,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
@@ -133,7 +142,7 @@ class FeedComp extends StatelessWidget {
                     const Icon(
                       Icons.comment,
                       color: Colors.white,
-                      size: 20,
+                      size: 22,
                     ),
                     SizedBox(
                       width: width * 0.01,
@@ -142,6 +151,7 @@ class FeedComp extends StatelessWidget {
                       comments,
                       style: const TextStyle(
                         color: Colors.white,
+                        fontSize: 17,
                       ),
                     ),
                   ],
@@ -151,7 +161,7 @@ class FeedComp extends StatelessWidget {
                     const Icon(
                       Icons.share,
                       color: Colors.white,
-                      size: 20,
+                      size: 22,
                     ),
                     SizedBox(
                       width: width * 0.01,
@@ -160,6 +170,7 @@ class FeedComp extends StatelessWidget {
                       shares,
                       style: const TextStyle(
                         color: Colors.white,
+                        fontSize: 17,
                       ),
                     ),
                   ],
@@ -169,7 +180,7 @@ class FeedComp extends StatelessWidget {
                     const Icon(
                       Icons.favorite_border_outlined,
                       color: Colors.white,
-                      size: 20,
+                      size: 22,
                     ),
                     SizedBox(
                       width: width * 0.01,
@@ -178,6 +189,7 @@ class FeedComp extends StatelessWidget {
                       favorites,
                       style: const TextStyle(
                         color: Colors.white,
+                        fontSize: 17,
                       ),
                     ),
                   ],
@@ -187,7 +199,7 @@ class FeedComp extends StatelessWidget {
                     const Icon(
                       Icons.analytics_outlined,
                       color: Colors.white,
-                      size: 20,
+                      size: 22,
                     ),
                     SizedBox(
                       width: width * 0.01,
@@ -196,14 +208,15 @@ class FeedComp extends StatelessWidget {
                       analytics,
                       style: const TextStyle(
                         color: Colors.white,
+                        fontSize: 17,
                       ),
                     ),
                   ],
                 )
               ],
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

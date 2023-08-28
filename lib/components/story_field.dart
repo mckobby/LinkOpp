@@ -43,8 +43,8 @@ class StoryField extends StatelessWidget {
                   left: 10,
                   top: 10,
                   child: Container(
-                    height: 30,
-                    width: 25,
+                    height: 25,
+                    width: 22,
                     decoration: BoxDecoration(
                       color: tdElevatedButton,
                       borderRadius: BorderRadius.circular(5),
