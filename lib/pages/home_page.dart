@@ -12,8 +12,66 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void signOut() {
+  void _signOut() async {
     FirebaseAuth.instance.signOut();
+    try {
+      await FirebaseAuth.instance.signOut(
+      );
+      if (context.mounted) Navigator.pop(context);
+    } on FirebaseAuthException {
+      Navigator.pop(context);
+    }
+  }
+
+  void _showDialog() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            backgroundColor: tdBackground,
+            title: const Text(
+              'Sign out',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: tdElevatedButton,
+              ),
+            ),
+            content: const Text(
+              'Are you sure you want to sign out?',
+              style: TextStyle(
+                fontSize: 17,
+                color: tdActionTexts,
+              ),
+            ),
+            actions: [
+              ElevatedButton(
+                onPressed: _signOut,
+                child: const Text(
+                  'YES',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: tdElevatedButton,
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text(
+                  'NO',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: tdActionTexts,
+                  ),
+                ),
+              )
+            ],
+          );
+        });
   }
 
   final textController = TextEditingController();
@@ -22,36 +80,45 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: tdBackground,
+      drawer: const Drawer(
+        backgroundColor: tdBackground,
+      ),
       appBar: AppBar(
         backgroundColor: tdElevatedButton,
-        title: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-                const Text(
-                  'LinkOpp',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: signOut,
-                  child: const Icon(
-                    Icons.logout,
-                    color: Colors.white,
-                  ),
-                )
-              ],
-            ),
-          ],
+        leading: Builder(
+          builder: (context) {
+            return GestureDetector(
+              onTap: () => Scaffold.of(context).openDrawer(),
+              child: const Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
+            );
+          },
         ),
+        title: const Text(
+          'LinkOpp',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        actions: [
+          GestureDetector(
+            onTap: _showDialog,
+            child: Padding(
+              padding: EdgeInsets.only(right: width * 0.045),
+              child: const Icon(
+                Icons.logout,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
       ),
       body: ListView(
         children: [

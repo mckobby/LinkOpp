@@ -54,6 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
           message,
           style: const TextStyle(
             fontSize: 17,
+            color: tdActionTexts,
           ),
         ),
       ),

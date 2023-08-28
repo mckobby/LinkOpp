@@ -47,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
           message,
           style: const TextStyle(
             fontSize: 17,
+            color: tdActionTexts,
           ),
         ),
       ),
