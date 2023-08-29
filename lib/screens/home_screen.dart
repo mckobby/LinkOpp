@@ -3,14 +3,14 @@ import 'package:link_opp/components/feed_comp.dart';
 import 'package:link_opp/components/story_field.dart';
 import 'package:link_opp/constants/colors.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeScreenState extends State<HomeScreen> {
   final textController = TextEditingController();
   @override
   Widget build(BuildContext context) {

@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<Widget> _pages = [
-    const Home(),
+    const HomeScreen(),
     const Center(
       child: Text(
         'a winner',
