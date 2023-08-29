@@ -4,6 +4,9 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:link_opp/components/drawer_listtile.dart';
 import 'package:link_opp/constants/colors.dart';
 import 'package:link_opp/screens/home_screen.dart';
+import 'package:link_opp/screens/messages_screen.dart';
+import 'package:link_opp/screens/notifications_screen.dart';
+import 'package:link_opp/screens/search_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -81,32 +84,11 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  final List<Widget> _pages = [
+  final List<Widget> _screens = [
     const HomeScreen(),
-    const Center(
-      child: Text(
-        'a winner',
-        style: TextStyle(
-          fontSize: 50,
-        ),
-      ),
-    ),
-    const Center(
-      child: Text(
-        'already',
-        style: TextStyle(
-          fontSize: 50,
-        ),
-      ),
-    ),
-    const Center(
-      child: Text(
-        'God',
-        style: TextStyle(
-          fontSize: 50,
-        ),
-      ),
-    )
+    const SearchScreen(),
+    const NotificationsScreen(),
+    const MessagesScreen(),
   ];
 
   @override
@@ -171,7 +153,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: tdElevatedButton,
         leading: Builder(
           builder: (context) {
-            return GestureDetector(
+            return InkWell(
               onTap: () => Scaffold.of(context).openDrawer(),
               child: const Icon(
                 Icons.menu,
@@ -189,7 +171,7 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
         actions: [
-          GestureDetector(
+          InkWell(
             onTap: _showDialog,
             child: Padding(
               padding: EdgeInsets.only(right: width * 0.045),
@@ -201,7 +183,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: _pages[_selectedIndex],
+      body: _screens[_selectedIndex],
       bottomNavigationBar: Container(
         color: tdElevatedButton,
         child: Padding(
@@ -220,19 +202,19 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.all(height * 0.01),
             tabs: const [
               GButton(
-                icon: Icons.home_rounded,
+                icon: Icons.home_outlined,
                 text: 'Home',
               ),
               GButton(
-                icon: Icons.search,
+                icon: Icons.search_outlined,
                 text: 'Search',
               ),
               GButton(
-                icon: Icons.notifications,
+                icon: Icons.notifications_outlined,
                 text: 'Notifications',
               ),
               GButton(
-                icon: Icons.mail_rounded,
+                icon: Icons.mail_outline_rounded,
                 text: 'Messages',
               ),
             ],

@@ -181,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 profileImage: 'lib/images/ako.jpg',
                 profileName: 'Ghana Yesu',
                 content: 'Kasoa and wonders',
-                time: '48m',
+                time: '18h',
                 mainImage: 'lib/images/ame.jpg',
                 comments: '47',
                 shares: '3',
