@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:link_opp/components/drawer_listtile.dart';
 import 'package:link_opp/constants/colors.dart';
-import 'package:link_opp/pages/home.dart';
+import 'package:link_opp/screens/home_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
