@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:link_opp/components/feed_comp.dart';
-import 'package:link_opp/components/story_field.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:link_opp/components/drawer_listtile.dart';
 import 'package:link_opp/constants/colors.dart';
+import 'package:link_opp/pages/home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,8 +16,6 @@ class _HomePageState extends State<HomePage> {
   void _signOut() async {
     FirebaseAuth.instance.signOut();
     try {
-      await FirebaseAuth.instance.signOut(
-      );
       if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException {
       Navigator.pop(context);
@@ -74,7 +73,41 @@ class _HomePageState extends State<HomePage> {
         });
   }
 
-  final textController = TextEditingController();
+  int _selectedIndex = 0;
+
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final List<Widget> _pages = [
+    const Home(),
+    const Center(
+      child: Text(
+        'a winner',
+        style: TextStyle(
+          fontSize: 50,
+        ),
+      ),
+    ),
+    const Center(
+      child: Text(
+        'already',
+        style: TextStyle(
+          fontSize: 50,
+        ),
+      ),
+    ),
+    const Center(
+      child: Text(
+        'God',
+        style: TextStyle(
+          fontSize: 50,
+        ),
+      ),
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -83,8 +116,56 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: tdBackground,
-      drawer: const Drawer(
-        backgroundColor: tdBackground,
+      drawer: Drawer(
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: SweepGradient(
+              startAngle: 2.8,
+              endAngle: 4.5,
+              center: Alignment.bottomRight,
+              colors: [tdElevatedButton, tdBackground],
+            ),
+          ),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Center(
+                  child: Image(
+                    image: const AssetImage(
+                      'lib/images/logo.png',
+                    ),
+                    height: height * 0.08,
+                  ),
+                ),
+              ),
+              DrawerListTile(
+                onTap: () {},
+                leadingIcon: Icons.person_3_outlined,
+                title: 'Profile',
+              ),
+              DrawerListTile(
+                onTap: () {},
+                leadingIcon: Icons.people_outline,
+                title: 'Followers || Following',
+              ),
+              DrawerListTile(
+                onTap: () {},
+                leadingIcon: Icons.groups_3_outlined,
+                title: 'Groups',
+              ),
+              DrawerListTile(
+                onTap: () {},
+                leadingIcon: Icons.whatshot_outlined,
+                title: 'Trending',
+              ),
+              DrawerListTile(
+                onTap: () {},
+                leadingIcon: Icons.share_outlined,
+                title: 'Share App',
+              )
+            ],
+          ),
+        ),
       ),
       appBar: AppBar(
         backgroundColor: tdElevatedButton,
@@ -120,208 +201,43 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              Container(
-                color: tdDrawer,
-                padding: EdgeInsets.symmetric(vertical: height * 0.015),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.045),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: const AssetImage('lib/images/kmj.jpg'),
-                        radius: height * 0.032,
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: width * 0.03),
-                          child: TextField(
-                            controller: textController,
-                            decoration: InputDecoration(
-                              hintText: 'LinkOpp with the world...',
-                              hintStyle: TextStyle(
-                                color: tdActionTexts.withOpacity(0.5),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: tdElevatedButton),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              focusedBorder: const OutlineInputBorder(
-                                borderSide: BorderSide(color: tdActionTexts),
-                              ),
-                              contentPadding: EdgeInsets.symmetric(
-                                vertical: height * 0.01,
-                                horizontal: width * 0.03,
-                              ),
-                              fillColor: tdTextField,
-                              filled: true,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          Icon(
-                            Icons.image_sharp,
-                            color: Colors.white,
-                            size: height * 0.045,
-                          ),
-                          const Text(
-                            'Photo',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: Container(
+        color: tdElevatedButton,
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: width * 0.045,
+            vertical: height * 0.01,
+          ),
+          child: GNav(
+            selectedIndex: _selectedIndex,
+            backgroundColor: tdElevatedButton,
+            activeColor: Colors.white,
+            color: Colors.white,
+            gap: width * 0.02,
+            tabBackgroundColor: Colors.grey.withAlpha(80),
+            onTabChange: _navigateBottomBar,
+            padding: const EdgeInsets.all(16),
+            tabs: const [
+              GButton(
+                icon: Icons.home_rounded,
+                text: 'Home',
               ),
-              const SizedBox(
-                height: 3,
+              GButton(
+                icon: Icons.search,
+                text: 'Search',
               ),
-              Container(
-                padding: EdgeInsets.only(left: width * 0.045),
-                color: tdDrawer,
-                height: height * 0.22,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    const StoryField(
-                      imagePath: 'lib/images/kmj.jpg',
-                      numberOfPics: '2',
-                      firstName: 'Motivated',
-                      lastName: 'Mindset',
-                    ),
-                    SizedBox(
-                      width: width * 0.02,
-                    ),
-                    const StoryField(
-                      imagePath: 'lib/images/miccc.jpg',
-                      numberOfPics: '1',
-                      firstName: 'Kehinde',
-                      lastName: 'David',
-                    ),
-                    SizedBox(
-                      width: width * 0.02,
-                    ),
-                    const StoryField(
-                      imagePath: 'lib/images/aplus.jpg',
-                      numberOfPics: '1',
-                      firstName: 'Kwame',
-                      lastName: 'Dave',
-                    ),
-                    SizedBox(
-                      width: width * 0.02,
-                    ),
-                    const StoryField(
-                      imagePath: 'lib/images/awo.jpg',
-                      numberOfPics: '1',
-                      firstName: 'Ahmed',
-                      lastName: 'Donkoh',
-                    ),
-                    SizedBox(
-                      width: width * 0.02,
-                    ),
-                    const StoryField(
-                      imagePath: 'lib/images/meezy.jpg',
-                      numberOfPics: '2',
-                      firstName: 'Mercy',
-                      lastName: 'Kipsos',
-                    ),
-                    SizedBox(
-                      width: width * 0.02,
-                    ),
-                    const StoryField(
-                      imagePath: 'lib/images/spa.jpg',
-                      numberOfPics: '1',
-                      firstName: 'Yaa',
-                      lastName: 'Fremah',
-                    ),
-                    SizedBox(
-                      width: width * 0.02,
-                    ),
-                    const StoryField(
-                      imagePath: 'lib/images/com.jpg',
-                      numberOfPics: '7',
-                      firstName: 'Sweetness',
-                      lastName: 'Emefa',
-                    ),
-                    SizedBox(
-                      width: width * 0.02,
-                    ),
-                  ],
-                ),
+              GButton(
+                icon: Icons.notifications,
+                text: 'Prompts',
               ),
-              const SizedBox(
-                height: 3,
+              GButton(
+                icon: Icons.mail_rounded,
+                text: 'Messages',
               ),
-              const FeedComp(
-                profileImage: 'lib/images/food.jpg',
-                profileName: 'April M Adler',
-                content:
-                    'I am looking for a perfect web designer and developer, Inbox me on messenger',
-                time: '48m',
-                mainImage: 'lib/images/man.jpg',
-                comments: '1',
-                shares: '0',
-                favorites: '0',
-                analytics: '9',
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              const FeedComp(
-                profileImage: 'lib/images/ako.jpg',
-                profileName: 'Ghana Yesu',
-                content: 'Kasoa and wonders',
-                time: '48m',
-                mainImage: 'lib/images/ame.jpg',
-                comments: '47',
-                shares: '3',
-                favorites: '338',
-                analytics: '12.8K',
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              const FeedComp(
-                profileImage: 'lib/images/godd.jpg',
-                profileName: 'Efo Kofi',
-                content: 'Guess the location',
-                time: '3d',
-                mainImage: 'lib/images/wen.jpg',
-                comments: '91',
-                shares: '0',
-                favorites: '188',
-                analytics: '1.1M',
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              const FeedComp(
-                profileImage: 'lib/images/roz.jpg',
-                profileName: 'Buju Mahogany',
-                content: 'Art is life',
-                time: '7h',
-                mainImage: 'lib/images/val.jpg',
-                comments: '1',
-                shares: '0',
-                favorites: '6,756',
-                analytics: '478.2K',
-              )
             ],
           ),
-        ],
+        ),
       ),
     );
   }
