@@ -217,7 +217,7 @@ class _HomePageState extends State<HomePage> {
             gap: width * 0.02,
             tabBackgroundColor: Colors.grey.withAlpha(80),
             onTabChange: _navigateBottomBar,
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(height * 0.01),
             tabs: const [
               GButton(
                 icon: Icons.home_rounded,
@@ -229,7 +229,7 @@ class _HomePageState extends State<HomePage> {
               ),
               GButton(
                 icon: Icons.notifications,
-                text: 'Prompts',
+                text: 'Notifications',
               ),
               GButton(
                 icon: Icons.mail_rounded,
