@@ -52,246 +52,242 @@ class FollowersFollowing extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: width * 0.01),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Container(
-                    padding: EdgeInsets.all(height * 0.02),
-                    color: tdDrawer,
-                    width: width * 0.485,
-                    child: Padding(
-                      padding: EdgeInsets.only(top: height * 0.01),
-                      child: Column(
-                        children: [
-                          Text(
-                            'Followers (6)',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              decoration: TextDecoration.combine(
-                                [TextDecoration.underline, TextDecoration.overline],
-                              ),
-                              decorationColor: Colors.white,
-                              decorationThickness: 2,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: height * 0.02,
-                                backgroundImage:
-                                    const AssetImage('lib/images/awo.jpg'),
-                              ),
-                              SizedBox(
-                                width: width * 0.02,
-                              ),
-                              const Text(
-                                'Owolabi Code\'s',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: height * 0.01,
-                          ),
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: height * 0.02,
-                                backgroundImage:
-                                    const AssetImage('lib/images/legpresec.jpg'),
-                              ),
-                              SizedBox(
-                                width: width * 0.02,
-                              ),
-                              const Text(
-                                'Salis',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: height * 0.01,
-                          ),
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: height * 0.02,
-                                backgroundImage:
-                                    const AssetImage('lib/images/owass.jpg'),
-                              ),
-                              SizedBox(
-                                width: width * 0.02,
-                              ),
-                              const Text(
-                                'Artistry Media',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: height * 0.01,
-                          ),
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: height * 0.02,
-                                backgroundImage:
-                                    const AssetImage('lib/images/ako.jpg'),
-                              ),
-                              SizedBox(
-                                width: width * 0.02,
-                              ),
-                              const Text(
-                                'Kwaku Gene',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: height * 0.01,
-                          ),
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: height * 0.02,
-                                backgroundImage:
-                                    const AssetImage('lib/images/man.jpg'),
-                              ),
-                              SizedBox(
-                                width: width * 0.02,
-                              ),
-                              const Text(
-                                'Yaa Trapqueen',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: height * 0.01,
-                          ),
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: height * 0.02,
-                                backgroundImage:
-                                    const AssetImage('lib/images/ame.jpg'),
-                              ),
-                              SizedBox(
-                                width: width * 0.02,
-                              ),
-                              const Text(
-                                'Arun Raghav',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+          Padding(
+            padding: EdgeInsets.only(left: width * 0.01),
+            child: Container(
+              padding: EdgeInsets.all(height * 0.02),
+              color: tdDrawer,
+              width: width * 0.485,
+              child: Padding(
+                padding: EdgeInsets.only(top: height * 0.01),
+                child: Column(
+                  children: [
+                    Text(
+                      'Followers (6)',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        decoration: TextDecoration.combine(
+                          [TextDecoration.underline, TextDecoration.overline],
+                        ),
+                        decorationColor: Colors.white,
+                        decorationThickness: 2,
                       ),
                     ),
-                  ),
+                    SizedBox(
+                      height: height * 0.01,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: height * 0.02,
+                          backgroundImage:
+                              const AssetImage('lib/images/awo.jpg'),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        const Text(
+                          'Owolabi Code\'s',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.01,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: height * 0.02,
+                          backgroundImage:
+                              const AssetImage('lib/images/legpresec.jpg'),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        const Text(
+                          'Salis',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.01,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: height * 0.02,
+                          backgroundImage:
+                              const AssetImage('lib/images/owass.jpg'),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        const Text(
+                          'Artistry Media',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.01,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: height * 0.02,
+                          backgroundImage:
+                              const AssetImage('lib/images/ako.jpg'),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        const Text(
+                          'Kwaku Gene',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.01,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: height * 0.02,
+                          backgroundImage:
+                              const AssetImage('lib/images/man.jpg'),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        const Text(
+                          'Yaa Trapqueen',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.01,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: height * 0.02,
+                          backgroundImage:
+                              const AssetImage('lib/images/ame.jpg'),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        const Text(
+                          'Arun Raghav',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-              SizedBox(
-                width: width * 0.01,
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: width * 0.01),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Container(
-                    padding: EdgeInsets.all(height * 0.02),
-                    color: tdDrawer,
-                    width: width * 0.485,
-                    child: Padding(
-                      padding: EdgeInsets.only(top: height * 0.01),
-                      child: Column(
-                        children: [
-                          Text(
-                            'Following (2)',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              decoration: TextDecoration.combine(
-                                [TextDecoration.underline, TextDecoration.overline],
-                              ),
-                              decorationColor: Colors.white,
-                              decorationThickness: 2,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: height * 0.02,
-                                backgroundImage:
-                                    const AssetImage('lib/images/food.jpg'),
-                              ),
-                              SizedBox(
-                                width: width * 0.02,
-                              ),
-                              const Text(
-                                'Gideon Aduku',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: height * 0.01,
-                          ),
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: height * 0.02,
-                                backgroundImage:
-                                    const AssetImage('lib/images/mikeee.jpg'),
-                              ),
-                              SizedBox(
-                                width: width * 0.02,
-                              ),
-                              const Text(
-                                'Aiman Zubair',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+            ),
+          ),
+          SizedBox(
+            width: width * 0.01,
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: width * 0.01),
+            child: Container(
+              padding: EdgeInsets.all(height * 0.02),
+              color: tdDrawer,
+              width: width * 0.485,
+              child: Padding(
+                padding: EdgeInsets.only(top: height * 0.01),
+                child: Column(
+                  children: [
+                    Text(
+                      'Following (2)',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        decoration: TextDecoration.combine(
+                          [TextDecoration.underline, TextDecoration.overline],
+                        ),
+                        decorationColor: Colors.white,
+                        decorationThickness: 2,
                       ),
                     ),
-                  ),
+                    SizedBox(
+                      height: height * 0.01,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: height * 0.02,
+                          backgroundImage:
+                              const AssetImage('lib/images/food.jpg'),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        const Text(
+                          'Gideon Aduku',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.01,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: height * 0.02,
+                          backgroundImage:
+                              const AssetImage('lib/images/mikeee.jpg'),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        const Text(
+                          'Aiman Zubair',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ],
+            ),
           ),
         ],
       ),
