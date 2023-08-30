@@ -36,7 +36,7 @@ class NotificationsListTile extends StatelessWidget {
         details,
         style: const TextStyle(
           color: Colors.white,
-          fontSize: 18,
+          fontSize: 19,
         ),
         maxLines: 3,
       ),

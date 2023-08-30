@@ -70,7 +70,7 @@ class FollowersFollowing extends StatelessWidget {
                       'Followers (6)',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 20,
                         decoration: TextDecoration.combine(
                           [TextDecoration.underline, TextDecoration.overline],
                         ),
@@ -95,7 +95,7 @@ class FollowersFollowing extends StatelessWidget {
                           'Owolabi Code\'s',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 17.5,
                           ),
                         )
                       ],
@@ -117,7 +117,7 @@ class FollowersFollowing extends StatelessWidget {
                           'Salis',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 17.5,
                           ),
                         ),
                       ],
@@ -139,7 +139,7 @@ class FollowersFollowing extends StatelessWidget {
                           'Artistry Media',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 17.5,
                           ),
                         ),
                       ],
@@ -161,7 +161,7 @@ class FollowersFollowing extends StatelessWidget {
                           'Kwaku Gene',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 17.5,
                           ),
                         ),
                       ],
@@ -183,7 +183,7 @@ class FollowersFollowing extends StatelessWidget {
                           'Yaa Trapqueen',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 17.5,
                           ),
                         ),
                       ],
@@ -205,7 +205,7 @@ class FollowersFollowing extends StatelessWidget {
                           'Arun Raghav',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 17.5,
                           ),
                         ),
                       ],
@@ -232,7 +232,7 @@ class FollowersFollowing extends StatelessWidget {
                       'Following (2)',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 20,
                         decoration: TextDecoration.combine(
                           [TextDecoration.underline, TextDecoration.overline],
                         ),
@@ -257,7 +257,7 @@ class FollowersFollowing extends StatelessWidget {
                           'Gideon Aduku',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 17.5,
                           ),
                         )
                       ],
@@ -279,7 +279,7 @@ class FollowersFollowing extends StatelessWidget {
                           'Aiman Zubair',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 17.5,
                           ),
                         ),
                       ],

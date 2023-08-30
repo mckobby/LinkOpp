@@ -83,7 +83,7 @@ class GroupsPage extends StatelessWidget {
                         'My Trotro Diary',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 19,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -91,7 +91,7 @@ class GroupsPage extends StatelessWidget {
                         '229 Members',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 17,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -111,7 +111,7 @@ class GroupsPage extends StatelessWidget {
                 'Show more',
                 style: TextStyle(
                   color: tdActionTexts,
-                  fontSize: 16,
+                  fontSize: 19,
                   fontWeight: FontWeight.w500,
                 ),
               ),
