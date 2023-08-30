@@ -100,7 +100,7 @@ class ProfilePage extends StatelessWidget {
                           '6 followers',
                           style: TextStyle(
                             color: Colors.grey[300],
-                            fontSize: 18,
+                            fontSize: 19,
                           ),
                         ),
                         SizedBox(width: width * 0.02),
@@ -108,7 +108,7 @@ class ProfilePage extends StatelessWidget {
                           '2 following',
                           style: TextStyle(
                             color: Colors.grey[300],
-                            fontSize: 18,
+                            fontSize: 19,
                           ),
                         ),
                       ],
@@ -123,7 +123,7 @@ class ProfilePage extends StatelessWidget {
                       'Web App Developer || Mobile App Developer',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 19,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -140,7 +140,7 @@ class ProfilePage extends StatelessWidget {
                           'Posts',
                           style: TextStyle(
                             color: tdActionTexts,
-                            fontSize: 18,
+                            fontSize: 19,
                             fontWeight: FontWeight.bold,
                             backgroundColor: tdBackground,
                           ),
@@ -149,21 +149,21 @@ class ProfilePage extends StatelessWidget {
                           'About',
                           style: TextStyle(
                             color: Colors.grey[300],
-                            fontSize: 18,
+                            fontSize: 19,
                           ),
                         ),
                         Text(
                           'Photos',
                           style: TextStyle(
                             color: Colors.grey[300],
-                            fontSize: 18,
+                            fontSize: 19,
                           ),
                         ),
                         Text(
                           'Videos',
                           style: TextStyle(
                             color: Colors.grey[300],
-                            fontSize: 18,
+                            fontSize: 19,
                           ),
                         ),
                       ],
@@ -186,7 +186,7 @@ class ProfilePage extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.grey[300],
                             fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            fontSize: 19,
                           ),
                         ),
                         SizedBox(
@@ -203,7 +203,7 @@ class ProfilePage extends StatelessWidget {
                               'Profile',
                               style: TextStyle(
                                 color: Colors.grey[300],
-                                fontSize: 18,
+                                fontSize: 19,
                               ),
                             ),
                             SizedBox(width: width * 0.03),
@@ -211,7 +211,7 @@ class ProfilePage extends StatelessWidget {
                               '||',
                               style: TextStyle(
                                 color: Colors.grey[300],
-                                fontSize: 18,
+                                fontSize: 19,
                               ),
                             ),
                             SizedBox(width: width * 0.03),
@@ -219,7 +219,7 @@ class ProfilePage extends StatelessWidget {
                               'Digital Creator',
                               style: TextStyle(
                                 color: Colors.grey[300],
-                                fontSize: 18,
+                                fontSize: 19,
                               ),
                             ),
                           ],
@@ -238,7 +238,7 @@ class ProfilePage extends StatelessWidget {
                               'tourafrique.blogspot.com',
                               style: TextStyle(
                                 color: Colors.grey[300],
-                                fontSize: 18,
+                                fontSize: 19,
                               ),
                             )
                           ],
@@ -257,7 +257,7 @@ class ProfilePage extends StatelessWidget {
                               'See more about yourself',
                               style: TextStyle(
                                 color: Colors.grey[300],
-                                fontSize: 18,
+                                fontSize: 19,
                               ),
                             )
                           ],
@@ -278,7 +278,7 @@ class ProfilePage extends StatelessWidget {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18,
+                                fontSize: 19,
                               ),
                             ),
                           ),
@@ -291,7 +291,7 @@ class ProfilePage extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.grey[300],
                             fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            fontSize: 19,
                           ),
                         ),
                         SizedBox(
@@ -382,7 +382,7 @@ class ProfilePage extends StatelessWidget {
                               'Motivated Mindset',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize: 19,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -390,7 +390,7 @@ class ProfilePage extends StatelessWidget {
                               'Aug 14',
                               style: TextStyle(
                                 color: Colors.grey[300],
-                                fontSize: 14,
+                                fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             )
@@ -408,7 +408,7 @@ class ProfilePage extends StatelessWidget {
                       'Rate my newest picture over 10',
                       style: TextStyle(
                         color: Colors.grey[300],
-                        fontSize: 18,
+                        fontSize: 19,
                       ),
                     ),
                   ),
