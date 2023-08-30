@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:link_opp/components/drawer_listtile.dart';
 import 'package:link_opp/constants/colors.dart';
 import 'package:link_opp/pages/groups_page.dart';
+import 'package:link_opp/pages/trending_page.dart';
 import 'package:link_opp/screens/home_screen.dart';
 import 'package:link_opp/screens/messages_screen.dart';
 import 'package:link_opp/screens/notifications_screen.dart';
@@ -154,7 +155,15 @@ class _HomePageState extends State<HomePage> {
                 title: 'Groups',
               ),
               DrawerListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    PageTransition(
+                      child: const TrendingPage(),
+                      type: PageTransitionType.bottomToTop,
+                    ),
+                  );
+                },
                 leadingIcon: Icons.whatshot_outlined,
                 title: 'Trending',
               ),

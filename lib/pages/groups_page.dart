@@ -24,12 +24,23 @@ class GroupsPage extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              'Communities',
-              style: TextStyle(
-                fontSize: 20,
-                fontStyle: FontStyle.italic,
-              ),
+            Row(
+              children: [
+                const Text(
+                  'Groups',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                SizedBox(
+                  width: width * 0.01,
+                ),
+                const Icon(
+                  Icons.groups_3_outlined,
+                  size: 20,
+                )
+              ],
             ),
             InkWell(
               onTap: () {},
