@@ -92,7 +92,7 @@ class FollowersFollowing extends StatelessWidget {
                           width: width * 0.02,
                         ),
                         const Text(
-                          'Owolabi Code\'s',
+                          'Owolabi',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 17.5,
