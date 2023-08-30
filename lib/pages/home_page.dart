@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:link_opp/components/drawer_listtile.dart';
 import 'package:link_opp/constants/colors.dart';
+import 'package:link_opp/pages/followers_following_page.dart';
 import 'package:link_opp/pages/groups_page.dart';
 import 'package:link_opp/pages/trending_page.dart';
 import 'package:link_opp/screens/home_screen.dart';
@@ -137,7 +138,15 @@ class _HomePageState extends State<HomePage> {
                 title: 'Profile',
               ),
               DrawerListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    PageTransition(
+                      child: const FollowersFollowing(),
+                      type: PageTransitionType.bottomToTop,
+                    ),
+                  );
+                },
                 leadingIcon: Icons.people_outline,
                 title: 'Followers || Following',
               ),
@@ -174,7 +183,12 @@ class _HomePageState extends State<HomePage> {
                 },
                 leadingIcon: Icons.share_outlined,
                 title: 'Share App',
-              )
+              ),
+              DrawerListTile(
+                onTap: () {},
+                leadingIcon: Icons.settings_outlined,
+                title: 'Settings',
+              ),
             ],
           ),
         ),
