@@ -5,6 +5,7 @@ import 'package:link_opp/components/drawer_listtile.dart';
 import 'package:link_opp/constants/colors.dart';
 import 'package:link_opp/pages/followers_following_page.dart';
 import 'package:link_opp/pages/groups_page.dart';
+import 'package:link_opp/pages/profile_page.dart';
 import 'package:link_opp/pages/trending_page.dart';
 import 'package:link_opp/screens/home_screen.dart';
 import 'package:link_opp/screens/messages_screen.dart';
@@ -133,7 +134,15 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               DrawerListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    PageTransition(
+                      child: const ProfilePage(),
+                      type: PageTransitionType.bottomToTop,
+                    ),
+                  );
+                },
                 leadingIcon: Icons.person_3_outlined,
                 title: 'Profile',
               ),
