@@ -114,7 +114,7 @@ class NotificationsScreen extends StatelessWidget {
                 ),
                 child: NotificationsListTile(
                   imagePath: 'lib/images/mikeee.jpg',
-                  profileName: 'Senirman_Layla',
+                  profileName: 'Seniorman_Layla',
                   details: 'posted a new video: "Layla WASSCE".',
                   onTap: () {},
                 ),

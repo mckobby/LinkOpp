@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:link_opp/components/drawer_listtile.dart';
 import 'package:link_opp/constants/colors.dart';
+import 'package:link_opp/pages/groups_page.dart';
 import 'package:link_opp/screens/home_screen.dart';
 import 'package:link_opp/screens/messages_screen.dart';
 import 'package:link_opp/screens/notifications_screen.dart';
 import 'package:link_opp/screens/search_screen.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -91,6 +94,13 @@ class _HomePageState extends State<HomePage> {
     const MessagesScreen(),
   ];
 
+  void shareApp() {
+    String message =
+        'Check out this new social media app, LinkOpp, that is helping millions link up with the'
+        ' rest of the world. Download it here ...';
+    Share.share(message);
+  }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -131,7 +141,15 @@ class _HomePageState extends State<HomePage> {
                 title: 'Followers || Following',
               ),
               DrawerListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.of(context).push(
+                    PageTransition(
+                      child: const GroupsPage(),
+                      type: PageTransitionType.bottomToTop,
+                    ),
+                  );
+                },
                 leadingIcon: Icons.groups_3_outlined,
                 title: 'Groups',
               ),
@@ -141,7 +159,10 @@ class _HomePageState extends State<HomePage> {
                 title: 'Trending',
               ),
               DrawerListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  shareApp();
+                },
                 leadingIcon: Icons.share_outlined,
                 title: 'Share App',
               )

@@ -21,6 +21,7 @@ class _SearchScreenState extends State<SearchScreen> {
       backgroundColor: tdBackground,
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Align(
               alignment: Alignment.topCenter,
@@ -78,16 +79,12 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: height * 0.663,
-              child: const Center(
-                child: Text(
-                  'Your search history will appear here',
-                  style: TextStyle(
-                    color: tdActionTexts,
-                    fontSize: 20,
-                  ),
-                ),
+            const Text(
+              'Your search history will appear here',
+              style: TextStyle(
+                color: tdActionTexts,
+                fontSize: 20,
+                fontStyle: FontStyle.italic,
               ),
             )
           ],

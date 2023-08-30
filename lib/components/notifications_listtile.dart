@@ -28,7 +28,7 @@ class NotificationsListTile extends StatelessWidget {
         profileName,
         style: const TextStyle(
           color: Colors.white,
-          fontSize: 16,
+          fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -36,13 +36,14 @@ class NotificationsListTile extends StatelessWidget {
         details,
         style: const TextStyle(
           color: Colors.white,
+          fontSize: 18,
         ),
         maxLines: 3,
       ),
       trailing: const Icon(
         Icons.more_horiz_outlined,
         color: Colors.white,
-        size: 16,
+        size: 18,
       ),
     );
   }
