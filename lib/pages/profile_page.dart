@@ -58,15 +58,9 @@ class ProfilePage extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(top: 35, left: 20),
-                    alignment: Alignment.topLeft,
-                    color: tdBackground,
-                    height: height * 0.2,
-                  ),
-                ],
+              Container(
+                color: tdBackground,
+                height: height * 0.2,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -81,17 +75,15 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(
-                  width * 0.045,
-                  height * 0.3,
-                  width * 0.045,
-                  height * 0.02,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: width * 0.045,
+                      top: height * 0.3,
+                    ),
+                    child: const Text(
                       'Motivated Mindset',
                       style: TextStyle(
                         color: Colors.white,
@@ -99,7 +91,10 @@ class ProfilePage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Row(
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+                    child: Row(
                       children: [
                         Text(
                           '6 followers',
@@ -118,10 +113,13 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: height * 0.01,
-                    ),
-                    const Text(
+                  ),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+                    child: const Text(
                       'Web App Developer || Mobile App Developer',
                       style: TextStyle(
                         color: Colors.white,
@@ -129,10 +127,13 @@ class ProfilePage extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(
-                      height: height * 0.03,
-                    ),
-                    Row(
+                  ),
+                  SizedBox(
+                    height: height * 0.02,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
@@ -144,7 +145,6 @@ class ProfilePage extends StatelessWidget {
                             backgroundColor: tdBackground,
                           ),
                         ),
-                        SizedBox(width: width * 0.02),
                         Text(
                           'About',
                           style: TextStyle(
@@ -152,7 +152,6 @@ class ProfilePage extends StatelessWidget {
                             fontSize: 18,
                           ),
                         ),
-                        SizedBox(width: width * 0.02),
                         Text(
                           'Photos',
                           style: TextStyle(
@@ -160,7 +159,6 @@ class ProfilePage extends StatelessWidget {
                             fontSize: 18,
                           ),
                         ),
-                        SizedBox(width: width * 0.02),
                         Text(
                           'Videos',
                           style: TextStyle(
@@ -170,14 +168,17 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: height * 0.01,
-                    ),
-                    const Divider(),
-                    SizedBox(
-                      height: height * 0.01,
-                    ),
-                    Column(
+                  ),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  const Divider(),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -262,7 +263,7 @@ class ProfilePage extends StatelessWidget {
                           ],
                         ),
                         SizedBox(
-                          height: height * 0.03,
+                          height: height * 0.02,
                         ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(15),
@@ -283,7 +284,7 @@ class ProfilePage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: height * 0.03,
+                          height: height * 0.02,
                         ),
                         Text(
                           'Posts',
@@ -297,44 +298,43 @@ class ProfilePage extends StatelessWidget {
                           height: height * 0.01,
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CircleAvatar(
                               backgroundImage:
                                   const AssetImage('lib/images/kmj.jpg'),
                               radius: height * 0.032,
                             ),
-                            SizedBox(
-                              width: width * 0.03,
-                            ),
                             Expanded(
-                              child: TextField(
-                                controller: textController,
-                                decoration: InputDecoration(
-                                  hintText: 'LinkOpp with the world...',
-                                  hintStyle: TextStyle(
-                                    color: tdActionTexts.withOpacity(0.5),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: tdElevatedButton,
+                              child: Padding(
+                                padding:
+                              EdgeInsets.symmetric(horizontal: width * 0.03),
+                                child: TextField(
+                                  controller: textController,
+                                  decoration: InputDecoration(
+                                    hintText: 'LinkOpp with the world...',
+                                    hintStyle: TextStyle(
+                                      color: tdActionTexts.withOpacity(0.5),
                                     ),
-                                    borderRadius: BorderRadius.circular(20),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                        color: tdElevatedButton,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    focusedBorder: const OutlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: tdActionTexts),
+                                    ),
+                                    contentPadding: EdgeInsets.symmetric(
+                                      vertical: height * 0.01,
+                                      horizontal: width * 0.05,
+                                    ),
+                                    fillColor: tdTextField,
+                                    filled: true,
                                   ),
-                                  focusedBorder: const OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: tdActionTexts),
-                                  ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                    vertical: height * 0.01,
-                                    horizontal: width * 0.05,
-                                  ),
-                                  fillColor: tdTextField,
-                                  filled: true,
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              width: width * 0.03,
                             ),
                             Column(
                               children: [
@@ -358,151 +358,159 @@ class ProfilePage extends StatelessWidget {
                         SizedBox(
                           height: height * 0.01,
                         ),
-                        const Divider(),
-                        SizedBox(
-                          height: height * 0.01,
+                      ],
+                    ),
+                  ),
+                  const Divider(),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CircleAvatar(
+                          backgroundImage: const AssetImage('lib/images/kmj.jpg'),
+                          radius: height * 0.032,
                         ),
-                        Row(
+                        SizedBox(width: width * 0.03),
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CircleAvatar(
-                              backgroundImage:
-                                  const AssetImage('lib/images/kmj.jpg'),
-                              radius: height * 0.032,
+                            const Text(
+                              'Motivated Mindset',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                            SizedBox(width: width * 0.03),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  'Motivated Mindset',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Text(
-                                  'Aug 14',
-                                  style: TextStyle(
-                                    color: Colors.grey[300],
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                              ],
-                            ),
+                            Text(
+                              'Aug 14',
+                              style: TextStyle(
+                                color: Colors.grey[300],
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
-                        SizedBox(
-                          height: height * 0.01,
-                        ),
-                        Text(
-                          'Rate my newest picture over 10',
-                          style: TextStyle(
-                            color: Colors.grey[300],
-                            fontSize: 18,
-                          ),
-                        ),
-                        SizedBox(
-                          height: height * 0.01,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: const Image(
-                            image: AssetImage(
-                              'lib/images/kmj.jpg',
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.045),
+                    child: Text(
+                      'Rate my newest picture over 10',
+                      style: TextStyle(
+                        color: Colors.grey[300],
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: const Image(
+                      image: AssetImage(
+                        'lib/images/kmj.jpg',
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(width * 0.045, 0, width * 0.045, height * 0.01),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.comment,
+                              color: Colors.white,
+                              size: 22,
                             ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: height * 0.01,
+                            SizedBox(
+                              width: width * 0.01,
+                            ),
+                            const Text(
+                              '0',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                              ),
+                            )
+                          ],
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.comment,
-                                  color: Colors.white,
-                                  size: 22,
-                                ),
-                                SizedBox(
-                                  width: width * 0.01,
-                                ),
-                                const Text(
-                                  '0',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                  ),
-                                )
-                              ],
+                            const Icon(
+                              Icons.share,
+                              color: Colors.white,
+                              size: 22,
                             ),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.share,
-                                  color: Colors.white,
-                                  size: 22,
-                                ),
-                                SizedBox(
-                                  width: width * 0.01,
-                                ),
-                                const Text(
-                                  '1',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                  ),
-                                )
-                              ],
+                            SizedBox(
+                              width: width * 0.01,
                             ),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.favorite,
-                                  color: Colors.red,
-                                  size: 22,
-                                ),
-                                SizedBox(
-                                  width: width * 0.01,
-                                ),
-                                const Text(
-                                  '1',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                  ),
-                                )
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.analytics,
-                                  color: Colors.white,
-                                  size: 22,
-                                ),
-                                SizedBox(
-                                  width: width * 0.01,
-                                ),
-                                const Text(
-                                  '9',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                  ),
-                                )
-                              ],
-                            ),
+                            const Text(
+                              '1',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                              ),
+                            )
                           ],
-                        )
+                        ),
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.favorite,
+                              color: tdLike,
+                              size: 22,
+                            ),
+                            SizedBox(
+                              width: width * 0.01,
+                            ),
+                            const Text(
+                              '1',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.analytics,
+                              color: Colors.white,
+                              size: 22,
+                            ),
+                            SizedBox(
+                              width: width * 0.01,
+                            ),
+                            const Text(
+                              '9',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                              ),
+                            )
+                          ],
+                        ),
                       ],
-                    )
-                  ],
-                ),
+                    ),
+                  )
+                ],
               )
             ],
           ),
